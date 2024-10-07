@@ -3,7 +3,7 @@ name: Node.js CI
 on:
   push:
     branches:
-      - master
+      - master # Certifique-se de que esse é o nome correto da sua branch
   pull_request:
     branches:
       - master
@@ -14,10 +14,10 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.14.0]
+        node-version: [16.16.0]
 
     steps:
-      - name: Checkout respositorio
+      - name: Checkout repositório
         uses: actions/checkout@v3
 
       - name: Seta o Node.js
@@ -25,8 +25,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Instala as dependencias
-        run: npm install
+      - name: Instala as dependências
+        run: npm ci
 
       - name: Roda os testes
         run: npx jest
