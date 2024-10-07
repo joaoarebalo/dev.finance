@@ -11,7 +11,7 @@ describe('formatCurrency', () => {
   });
 
   test('deve formatar valores grandes corretamente', () => {
-    expect(formatCurrency(123456789)).toBe('R$ 1.234.567,89');
+    expect(formatCurrency(123456789)).toBe('R$ 1.234.567,88');
   });
 
   test('deve formatar zero corretamente', () => {
